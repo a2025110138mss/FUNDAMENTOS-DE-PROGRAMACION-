@@ -1,0 +1,10 @@
+#include <iostream> // Libreria para escribir y leer 
+
+using namespace std; //Que la entrada va por el teclado y la salida por el monitor
+
+int main()
+{
+    cout<<"Hola Mundo";
+
+    return 0;
+}
