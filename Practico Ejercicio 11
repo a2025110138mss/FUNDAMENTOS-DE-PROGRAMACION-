@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declarar la variable para el peso de la carta
+    double P;
+
+    // Pedir al usuario el peso de la carta en gramos
+    cout << "Ingrese el peso de la carta en gramos: ";
+    cin >> P;
+
+    // Verificar el peso y calcular el costo
+    if (P > 0 && P < 50) {
+        cout << "Costo de envio: Bs. 1.50" << endl;
+    } 
+    else if (P >= 50 && P <= 100) {
+        cout << "Costo de envio: Bs. 4.00" << endl;
+    }
+    else if (P > 100 && P <= 200) {
+        cout << "Costo de envio: Bs. 6.00" << endl;
+    }
+    else if (P > 200 && P <= 350) {
+        cout << "Costo de envio: Bs. 10.50" << endl;
+    }
+    else if (P > 350 && P <= 500) {
+        cout << "Costo de envio: Bs. 15.00" << endl;
+    }
+    else if (P > 500) {
+        cout << "NO PUEDE ENVIAR COMO CARTA" << endl;
+    }
+    else {
+        cout << "El peso ingresado no es válido." << endl;
+    }
+
+    return 0;
+}
