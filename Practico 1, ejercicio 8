@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declaración de variables para los coeficientes
+    double A, B, C, D, E, F;
+
+    // Entrada de los coeficientes
+    cout << "Ingrese los coeficientes de las ecuaciones Ax + By = C y Dx + Ey = F" << endl;
+    cout << "A: ";
+    cin >> A;
+    cout << "B: ";
+    cin >> B;
+    cout << "C: ";
+    cin >> C;
+    cout << "D: ";
+    cin >> D;
+    cout << "E: ";
+    cin >> E;
+    cout << "F: ";
+    cin >> F;
+
+    // Calcular el determinante
+    double det = A * E - B * D;
+
+    if (det != 0) {
+        // Si el determinante es diferente de 0, hay una solución única
+        double X = (C * E - B * F) / det;
+        double Y = (A * F - C * D) / det;
+
+        cout << "La solución es: " << endl;
+        cout << "X = " << X << endl;
+        cout << "Y = " << Y << endl;
+    }
+    else {
+        // Si el determinante es 0, debemos verificar si el sistema es consistente
+        if (A * F - C * D == 0 && B * F - C * E == 0) {
+            cout << "El sistema tiene infinitas soluciones." << endl;
+        }
+        else {
+            cout << "El sistema no tiene solucion." << endl;
+        }
+    }
+
+    return 0;
+}
