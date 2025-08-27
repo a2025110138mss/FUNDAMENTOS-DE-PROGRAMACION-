@@ -1,0 +1,25 @@
+Algoritmo sin_titulo
+	Escribir "Ingrese el valor de a: "
+	Leer a
+	Si a<>0 Entonces
+		Escribir "Ingrese el valor de b: "
+		Leer b
+		Escribir "Ingrese el valor de c: "
+		Leer c
+		d <- b*b-4*a*c
+		Si d>0 Entonces
+			x1 <- (-b+d^(1/2))/(2*a)
+			x2 <- (-b+d^(1/2))/(2*a)
+			Escribir "Raices reales: x1= ",x1, "x2= ",x2
+		SiNo
+			Si d=0 Entonces
+				Escribir "Raiz unica: ", -b/(2*a)
+			SiNo
+				Escribir "Raiz imaginaria x1= ", -b/(2*a), "+", ((-d)^(1/2))/(2*a), "i"
+				Escribir "Raiz imaginario x2= ", -b/(2*a), "-", ((-d)^(1/2))/(2*a), "i"
+			FinSi
+		FinSi
+	SiNo
+		Escribir "Error la solucion no existe"
+	FinSi
+FinAlgoritmo
