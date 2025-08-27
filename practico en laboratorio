@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float a, b, c, x1, x2, discriminante;
+    std::cout << "Bienvenido a la calculadora de ecuaciones cuadraticas" << endl;
+    cout << "Introduzca la variable a " << endl;
+    cin >> a;
+    cout << "Introduzca la variable b " << endl;
+    cin >> b;
+    cout << "Introduzca la variable c " << endl;
+    cin >> c;
+    discriminante = b * b - 4 * a * c;
+    if (a == 0)
+    {
+        cout << "La solucion es indeterminada" << endl;
+    }
+    else if (discriminante >= 0)
+    {
+        x1 = (-b + sqrt(discriminante)) / (2 * a);
+        x2 = (-b - sqrt(discriminante)) / (2 * a);
+        cout << "Las soluciones de la ecuacion son: " << endl;
+        cout << "x1 = " << x1 << ", x2 = " << x2 << endl;
+    }
+    else {
+        cout << "La solucion no es real" << endl;
+        cout << "Las raices imaginarias son:" << endl;
+        cout << "x1= " << -b / (2 * a) << "+" << sqrt(-discriminante) / (2 * a) << "i" << endl;
+        cout << "x2 = " << -b / (2 * a) << " - " << sqrt(-discriminante) / (2 * a) << "i" << endl;
+    }
+
+    return 0;
+}
