@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ float sueldoB, BonoT, BonoA, sueldoF;
+ cout<<"ingrese su sueldo basico"<< endl;
+ cin>>sueldoB;
+ cout<<"ingrese su Bono de transporte"<<endl;
+ cin>>BonoT;
+ cout<<"ingrese Bono de transporte"<<endl;
+ cin>>BonoA;
+ sueldoF=sueldoB+BonoT+BonoA;
+  cout<<"tu sueldo final es: "<<sueldoF<<endl;
+
+    return 0;
+}
