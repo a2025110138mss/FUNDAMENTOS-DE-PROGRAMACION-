@@ -2,20 +2,12 @@
 using namespace std;
 
 int main() {
-  
-    int precio_a, precio_b, precio_c;
+   
+    int precio_a = 10, precio_b = 20, precio_c = 30;
     int cantidad_a, cantidad_b, cantidad_c;
     float total;
 
- 
-    cout << "Ingrese el precio del producto A: ";
-    cin >> precio_a;
-    cout << "Ingrese el precio del producto B: ";
-    cin >> precio_b;
-    cout << "Ingrese el precio del producto C: ";
-    cin >> precio_c;
-
-
+  
     cout << "¿Cuántos productos A desea comprar? ";
     cin >> cantidad_a;
     cout << "¿Cuántos productos B desea comprar? ";
@@ -23,28 +15,28 @@ int main() {
     cout << "¿Cuántos productos C desea comprar? ";
     cin >> cantidad_c;
 
- 
+  
     total = (precio_a * cantidad_a) + (precio_b * cantidad_b) + (precio_c * cantidad_c);
     cout << "Total sin descuento: " << total << " Bs." << endl;
 
-
+  
     int total_productos = cantidad_a + cantidad_b + cantidad_c;
 
-    
+   
     if (total > 100) {
         total = total - (total * 0.10); 
         cout << "Se ha aplicado un 10% de descuento por superar los 100 Bs." << endl;
         cout << "Nuevo total después de descuento: " << total << " Bs." << endl;
     }
 
-  
+    
     if (total_productos > 5) {
         total = total - 5;  
         cout << "Se ha aplicado un bono de 5 Bs. por comprar más de 5 productos." << endl;
         cout << "Nuevo total después del bono: " << total << " Bs." << endl;
     }
 
- 
+   
     cout << "El total final a pagar es: " << total << " Bs." << endl;
 
     return 0;
