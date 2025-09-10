@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ int nota;
+ cout<<"ingrese la nota del estudiante"<<endl;
+ cin>>nota;
+ if(nota>=51 && nota<=100){
+     cout<<"el estudiante aprobo: "<<nota<<endl;
+ }
+ else if(nota>100){
+     cout<<"Error vuleva a ingresar bien la nota"<<endl;
+ }
+ else if(nota<51){
+ cout<<"el estudiante reprobo: "<<nota<<endl;
+}
+    return 0;
+}
