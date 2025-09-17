@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cout << "Ingrese 3 numeros entre 0 y 10: ";
+    cin >> a >> b >> c;
+
+    if (a < 0 || a > 10) {
+        cout << "El numero " << a << " no cumple con el rango ." << endl;
+    }
+    if (b < 0 || b > 10) {
+        cout << "El numero " << b << " no cumple con el rango ." << endl;
+    }
+    if (c < 0 || c > 10) {
+        cout << "El numero " << c << " no cumple con el rango ." << endl;
+    }
+
+    if (a >= 0 && a <= 10 && b >= 0 && b <= 10 && c >= 0 && c <= 10) {
+        cout << "El promedio es = " << (a + b + c) / 3.0 << endl;
+    }
+    else {
+        cout << "Hay error por los valores erroneos";
+    }
+
+    return 0;
+}
