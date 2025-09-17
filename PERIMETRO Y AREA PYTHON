@@ -1,0 +1,7 @@
+import math
+radio=float(input ("Introducir la circunferencia: "))
+perimetro = 2*math.pi*radio
+area = math.pi*radio**2
+
+print(f"El perimetro de la circunferencia es: {perimetro}")
+print(f"El area de la circunferencia es: {area}")
