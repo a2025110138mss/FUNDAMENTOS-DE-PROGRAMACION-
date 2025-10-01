@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, s = 0;
+    do {
+        cout << "Ingrese un número mayor que 0: ";
+        cin >> n;
+    } while (n <= 0);
+
+    for (int i = 1; i <= n; i++) {
+        s = s + i;
+    }
+
+    cout << "La suma de los números de 1 a " << n << " es: " << s << endl;
+    return 0;
+}
