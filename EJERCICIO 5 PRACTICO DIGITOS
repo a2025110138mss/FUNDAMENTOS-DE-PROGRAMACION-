@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int complemento_a_9(int n) {
+    int complemento = 0;
+    int factor = 1;  
+    
+    while (n > 0) {
+        int digito = n % 10; 
+        int digito_complemento = 9 - digito;  
+        complemento += digito_complemento * factor;  
+        factor *= 10; 
+        n /= 10;  
+    }
+    
+    return complemento;
+}
+
+int main() {
+    int numero;
+    cout << "Ingresa un numero entero: ";
+    cin >> numero;
+    
+    int resultado = complemento_a_9(numero);
+    cout << "El complemento a 9 de " << numero << " es: " << resultado << endl;
+    
+    return 0;
+}
