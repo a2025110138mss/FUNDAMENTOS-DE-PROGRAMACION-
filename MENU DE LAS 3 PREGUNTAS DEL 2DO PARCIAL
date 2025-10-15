@@ -1,0 +1,84 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main() {
+    int opcion;
+    int a, b, c;
+    
+    do {
+        
+        cout << "Elige una opción:\n";
+        cout << "1. Determinar el mayor de tres números\n";
+        cout << "2. Calcular la serie con ciclo For\n";
+        cout << "3. Calcular el peso total de productos\n";
+        cout << "4. Salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                
+                cout << "Introduce el primer número: ";
+                cin >> a;
+                cout << "Introduce el segundo número: ";
+                cin >> b;
+                cout << "Introduce el tercer número: ";
+                cin >> c;
+
+                if (a == b && b == c) {
+                    cout << "Todos los números son iguales.\n";
+                } else if (a > b && a > c) {
+                    cout << "El mayor número es: " << a << endl;
+                } else if (b > a && b > c) {
+                    cout << "El mayor número es: " << b << endl;
+                } else {
+                    cout << "El mayor número es: " << c << endl;
+                }
+                break;
+            }
+            case 2: {
+            
+                int x;
+                cout << "Introduce el valor de x: ";
+                cin >> x;
+
+                int suma = 0;
+            
+                for (int b = 1; b <= 10; ++b) {
+                    suma += pow(x, b); 
+                }
+
+                cout << "La suma total de la serie es: " << suma << endl;
+                break;
+            }
+            case 3: {
+               
+                int cantidadProductos;
+                double pesoTotal = 0.0;
+                cout << "¿Cuántos productos deseas ingresar? ";
+                cin >> cantidadProductos;
+
+                for (int i = 1; i <= cantidadProductos; i++) {
+                    double peso;
+                    cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+                    cin >> peso;
+                    pesoTotal += peso;
+                }
+
+                cout << "El peso total de los productos es: " << pesoTotal << " gramos.\n";
+                break;
+            }
+            case 4: {
+                cout << "¡Hasta luego!\n";
+                break;
+            }
+            default:
+                cout << "Opción no válida. Intenta de nuevo.\n";
+                break;
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
