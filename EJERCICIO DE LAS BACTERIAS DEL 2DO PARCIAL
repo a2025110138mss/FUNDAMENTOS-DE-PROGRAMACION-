@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip> // Para std::setw y std::fixed
+using namespace std;
+int main() {
+    int horasTotales = 60;
+    int intervalo = 5;
+    double nuevasBacterias = 1.0;
+    double totalBacterias = 1.0;
+
+    cout << fixed << setprecision(2); // Para mostrar 2 decimales
+    cout << "HORA\tNUEVAS BACTERIAS\tTOTAL\n";
+
+    for (int hora = 0; hora <= horasTotales; hora += intervalo) {
+        if (hora == 0) {
+            // Hora 0
+            cout << hora << "\t" << nuevasBacterias << "\t\t" << totalBacterias << "\n";
+        } else {
+            nuevasBacterias *= 2;       // Se duplican cada 5 horas
+            totalBacterias = nuevasBacterias; // En este caso es lo mismo, ya que se duplica
+            cout << hora << "\t" << nuevasBacterias << "\t\t" << totalBacterias << "\n";
+        }
+    }
+
+    std::cout << "\nEl total acumulado en 60 horas es: " << totalBacterias << std::endl;
+
+    return 0;
+}
