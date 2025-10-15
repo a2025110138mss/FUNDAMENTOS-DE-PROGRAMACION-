@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath> 
+#include <cmath> // Para usar pow()
 using namespace std;
 
 int main() {
@@ -7,7 +7,7 @@ int main() {
     int a, b, c;
     
     do {
-        
+        // Menú de opciones
         cout << "Elige una opción:\n";
         cout << "1. Determinar el mayor de tres números\n";
         cout << "2. Calcular la serie con ciclo For\n";
@@ -18,7 +18,7 @@ int main() {
 
         switch (opcion) {
             case 1: {
-                
+                // Ejercicio 1: Determinar el mayor de tres números
                 cout << "Introduce el primer número: ";
                 cin >> a;
                 cout << "Introduce el segundo número: ";
@@ -38,35 +38,62 @@ int main() {
                 break;
             }
             case 2: {
-            
-                int x;
-                cout << "Introduce el valor de x: ";
-                cin >> x;
-
+                // Ejercicio 2: Calcular la serie con ciclo For
+                int x, b;
                 int suma = 0;
-            
-                for (int b = 1; b <= 10; ++b) {
-                    suma += pow(x, b); 
+
+                // Ingreso de valores con validación
+                cout << "Ingrese el valor de x: ";
+                cin >> x;
+                cout << "Ingrese el valor de b (mayor que 1): ";
+                cin >> b;
+
+                if (b <= 1) {
+                    cout << "Error: b debe ser mayor que 1." << endl;
+                    return 1; // Sale si b es inválido
                 }
 
-                cout << "La suma total de la serie es: " << suma << endl;
+                // Cálculo de la suma de la serie
+                for (int i = 1; i <= b; ++i) {
+                    suma += pow(x, i);
+                }
+
+                cout << "La suma de la serie es: " << suma << endl;
                 break;
             }
             case 3: {
-               
+                // Ejercicio 3: Calcular el peso total de productos con validación y opción de continuar
                 int cantidadProductos;
                 double pesoTotal = 0.0;
-                cout << "¿Cuántos productos deseas ingresar? ";
-                cin >> cantidadProductos;
+                char continuar;
 
-                for (int i = 1; i <= cantidadProductos; i++) {
-                    double peso;
-                    cout << "Ingresa el peso del producto " << i << " (en gramos): ";
-                    cin >> peso;
-                    pesoTotal += peso;
-                }
+                do {
+                    cout << "¿Cuántos productos deseas ingresar? ";
+                    cin >> cantidadProductos;
 
-                cout << "El peso total de los productos es: " << pesoTotal << " gramos.\n";
+                    for (int i = 1; i <= cantidadProductos; i++) {
+                        double peso;
+                        cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+
+                        // Validación de peso no negativo
+                        do {
+                            cin >> peso;
+                            if (peso < 0) {
+                                cout << "El peso no puede ser negativo. Por favor, ingresa un peso válido: ";
+                            }
+                        } while (peso < 0);
+
+                        pesoTotal += peso;
+                    }
+
+                    cout << "El peso total de los productos es: " << pesoTotal << " gramos.\n";
+
+                    // Preguntar si desea continuar ingresando más productos
+                    cout << "¿Quieres ingresar más productos? (s/n): ";
+                    cin >> continuar;
+
+                } while (continuar == 's' || continuar == 'S');
+                
                 break;
             }
             case 4: {
