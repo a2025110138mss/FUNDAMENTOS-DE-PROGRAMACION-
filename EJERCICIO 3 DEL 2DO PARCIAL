@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    int n;
+    double peso, total = 0.0;
+
+    cout << "¿Cuántos productos deseas ingresar?: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        cout << "Ingrese el peso del producto " << i << " (en gramos): ";
+        cin >> peso;
+        total += peso;
+    }
+
+    cout << "El peso total es: " << total << " gramos." << endl;
+
+    // Mensaje aleatorio
+    srand(time(0));
+    int mensaje = rand() % 3;
+
+    switch (mensaje) {
+        case 0:
+            cout << "Dulce día :)" << endl;
+            break;
+        case 1:
+            cout << "Gracias por endulzar la vida!" << endl;
+            break;
+        case 2:
+            cout << "Sabor que inspira..." << endl;
+            break;
+    }
+
+    return 0;
+}
