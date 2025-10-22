@@ -1,0 +1,113 @@
+#include <iostream>
+#include <cmath> // Para usar pow()
+using namespace std;
+
+// Función para determinar el mayor de tres números
+void determinarMayor() {
+    int a, b, c;
+    cout << "Introduce el primer número: ";
+    cin >> a;
+    cout << "Introduce el segundo número: ";
+    cin >> b;
+    cout << "Introduce el tercer número: ";
+    cin >> c;
+
+    if (a == b && b == c) {
+        cout << "Todos los números son iguales.\n";
+    } else if (a > b && a > c) {
+        cout << "El mayor número es: " << a << endl;
+    } else if (b > a && b > c) {
+        cout << "El mayor número es: " << b << endl;
+    } else {
+        cout << "El mayor número es: " << c << endl;
+    }
+}
+
+// Función para calcular la suma de la serie: x^1 + x^2 + ... + x^b
+void calcularSerie() {
+    int x, b;
+    int suma = 0;
+
+    cout << "Ingrese el valor de x: ";
+    cin >> x;
+    cout << "Ingrese el valor de b (mayor que 1): ";
+    cin >> b;
+
+    if (b <= 1) {
+        cout << "Error: b debe ser mayor que 1." << endl;
+        return; // Salimos de la función si b es inválido
+    }
+
+    for (int i = 1; i <= b; ++i) {
+        suma += pow(x, i);
+    }
+
+    cout << "La suma de la serie es: " << suma << endl;
+}
+
+// Función para calcular el peso total de productos
+void calcularPesoTotal() {
+    int cantidadProductos;
+    double pesoTotal = 0.0;
+    char continuar;
+
+    do {
+        cout << "¿Cuántos productos deseas ingresar? ";
+        cin >> cantidadProductos;
+
+        for (int i = 1; i <= cantidadProductos; i++) {
+            double peso;
+            cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+
+            do {
+                cin >> peso;
+                if (peso < 0) {
+                    cout << "El peso no puede ser negativo. Por favor, ingresa un peso válido: ";
+                }
+            } while (peso < 0);
+
+            pesoTotal += peso;
+        }
+
+        cout << "El peso total de los productos es: " << pesoTotal << " gramos.\n";
+
+        cout << "¿Quieres ingresar más productos? (s/n): ";
+        cin >> continuar;
+
+    } while (continuar == 's' || continuar == 'S');
+}
+
+// Función principal con menú
+int main() {
+    int opcion;
+
+    do {
+        cout << "\nElige una opción:\n";
+        cout << "1. Determinar el mayor de tres números\n";
+        cout << "2. Calcular la serie con ciclo For\n";
+        cout << "3. Calcular el peso total de productos\n";
+        cout << "0. Salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                determinarMayor();
+                break;
+            case 2:
+                calcularSerie();
+                break;
+            case 3:
+                calcularPesoTotal();
+                break;
+            case 0:
+                cout << "¡Hasta luego!\n";
+                break;
+            default:
+                cout << "Opción no válida. Intenta de nuevo.\n";
+        }
+
+    } while (opcion != 0);
+
+    return 0;
+}
