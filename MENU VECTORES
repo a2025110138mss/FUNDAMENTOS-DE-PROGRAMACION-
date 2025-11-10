@@ -1,0 +1,89 @@
+#include <iostream>
+#include "stdlib.h"
+#include <string>
+#define MAX 100 // constante de compilar
+
+using namespace std;
+
+//prototipos
+void cargar(int vec[], int n);
+void mostrar(int vec[], int n);
+void eliminar(int vec[], int n);
+//colocar el prototipo del ejercicio del practico
+//void unir(int v1[], int n, int v2[], int m, int vec[], int & tam)
+void burbuja(int vec[], int m);
+void cargar2(string nombres[], int notas[], int tamano);
+
+
+int main()
+{
+	int v[MAX];
+	int opcion, tam;
+	// Menu
+	do {
+		cout << "Ingrese el tamaño del vector: ";
+		cin >> tam;
+	} while (tam<0 || tam>MAX);
+	do {
+		//Desplegar las opciones
+		cout << "\t\t Menu \n";
+		cout << "\t\t ==== \n";
+		cout << "1. Cargar\n";
+		cout << "2. Mostrar\n";
+		cout << "3. Ordenar\n";
+		cout << "4. Ejercicio\n";
+		cout << "5. Arreglos paralelos\n";
+		cout << "0. Salir\n";
+		cout << "Opcion: ";
+		cin >> opcion;
+		// Condicional multiple
+		switch (opcion) {
+		case 1:
+			cargar(v, tam);
+			//llamada a la funcion
+			break;
+		case 2:
+			mostrar(v, tam);
+			break;
+		case 3:
+			burbuja(v, tam);
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 0: cout << "Saliendo del Menu";
+			break;
+		default: cout << "ERROR de opcion";
+			break;
+		}
+		system("cls"); //instruccion que ocurre los comandos de 
+	} while (opcion != 0);
+
+
+	return 0;
+
+}
+
+void cargar(int vec[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << "Ingrese el dato" << i << ": ";
+		cin >> vec[i];
+	}
+}
+void mostrar(int vec[], int n) {
+	for (int i = 0; i < n; i++) 
+		cout << vec[i]<<endl;
+	system("pause");
+}
+void burbuja(int vec[], int m) {
+	int temp;
+	for(int i=0; i<m; i++) 
+		for (int j = 0; j < m; j++) {
+			if (vec[i] > vec[j]) {
+				temp = vec[i];
+				vec[i] = vec[j];
+				vec[j] = temp;
+			}
+		}
+}
