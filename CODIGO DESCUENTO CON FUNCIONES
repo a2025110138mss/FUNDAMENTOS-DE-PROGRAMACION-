@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+void descuento(double& total);
+void pedirtotal(double& total);
+void mostrartotal(double& total);
+
+int main(){
+double totalcompra;
+pedirtotal(totalcompra);
+descuento(totalcompra);
+mostrartotal(totalcompra);
+}
+void descuento(double& total) {
+	total = total - (total * 0.10);
+}
+void pedirtotal(double& total) {
+	cout << "ingrese el total de la compra: ";
+	cin >> total;
+}
+void mostrartotal(double& total) {
+	cout << "el total final con descuento: " << total << endl;
+}
