@@ -1,0 +1,39 @@
+#include <iostream>
+
+
+using namespace std;
+
+void dias(double total1, double total2, double total3, double total4, double total5, double total6, double total7, double& suma);
+void pedirtotal(double& total1, double& total2, double& total3, double& total4, double& total5, double& total6, double& total7);
+void mostrartotal(double total1, double total2, double total3, double total4, double total5, double total6, double total7, double suma);
+
+int main() {
+    double total1, total2, total3, total4, total5, total6, total7;
+    double suma = 0;
+
+    pedirtotal(total1, total2, total3, total4, total5, total6, total7);
+    dias(total1, total2, total3, total4, total5, total6, total7, suma);
+    mostrartotal(total1, total2, total3, total4, total5, total6, total7, suma);
+
+    return 0;
+}
+
+void dias(double total1, double total2, double total3, double total4, double total5, double total6, double total7, double& suma) {
+    suma = total1 + total2 + total3 + total4 + total5 + total6 + total7;
+}
+
+void pedirtotal(double& total1, double& total2, double& total3, double& total4, double& total5, double& total6, double& total7) {
+    cout << "Ingrese las compras de la ultima semana: ";
+    cin >> total1 >> total2 >> total3 >> total4 >> total5 >> total6 >> total7;
+}
+
+void mostrartotal(double total1, double total2, double total3, double total4, double total5, double total6, double total7, double suma) {
+    cout << "Lunes = " << total1 << endl;
+    cout << "Martes = " << total2 << endl;
+    cout << "Miercoles = " << total3 << endl;
+    cout << "Jueves = " << total4 << endl;
+    cout << "Viernes = " << total5 << endl;
+    cout << "Sabado = " << total6 << endl;
+    cout << "Domingo = " << total7 << endl;
+    cout << "Total de compra: " << suma << endl;
+}
